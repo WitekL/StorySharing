@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#encryption algorithm
+gem 'bcrypt', '3.1.11'
 #Simple form
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

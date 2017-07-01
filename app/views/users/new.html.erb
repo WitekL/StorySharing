@@ -1,2 +1,24 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <div class="topnav">
+      <p>test1</p>
+      <p>test2</p>
+    </div>
+      <h1>Create new account</h1>
+
+
+      <%= simple_form_for @user do |f| %>
+        <%= f.input :name, label: 'Username: ', error: 'Username is mandatory!' %>
+        <%= f.input :email, label: 'Email address: ', error: 'Email address is madnatory!'  %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation, label: 'Re-enter password: ' %>
+        <%= f.button :submit %>
+      <% end %>
+
+  </body>
+
+</html>

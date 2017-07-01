@@ -1,3 +1,64 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topnav {
+  background-color: black;
+    overflow: hidden;
+}
+
+.topnav p {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav p:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav p.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+#new_user {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+
+
+label{
+  width: 140px;
+  float: left;
+  text-align: right;
+  margin-left: 50px;
+  margin-right: -200px;
+  display: block
+}
+
+input{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+input[type=submit] {
+  border: none;
+  background-color: black;
+  color: white;
+}

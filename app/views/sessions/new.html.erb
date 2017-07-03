@@ -12,7 +12,11 @@
       </ul>
 
       <ul id="account-nav">
+      <% if logged_in? %>
+        <li>Test</li>
+      <% else %>
         <li><%= link_to "Sign up", new_user_path %></li>
+      <% end %>
       </ul>
     </div>
       <h1>Sign in</h1>

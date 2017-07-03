@@ -5,8 +5,15 @@
 
   <body>
     <div class="topnav">
-      <p>test1</p>
-      <p>test2</p>
+      <ul id="site-nav">
+        <li>Main</li>
+        <li>Articles</li>
+        <li>Gallery</li>
+      </ul>
+
+      <ul id="account-nav">
+        <li><%= link_to "Sign up", new_user_path %></li>
+      </ul>
     </div>
       <h1>Create new account</h1>
 

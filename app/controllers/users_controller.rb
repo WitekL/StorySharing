@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      p "test"
+     redirect_to '/sessions/new'
     else
       render 'new'
     end

@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
+    if @user.save
+      p "test"
+    else
+      render 'new'
+    end
   end
 
   def user_params

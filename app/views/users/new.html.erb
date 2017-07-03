@@ -1,6 +1,6 @@
 <html>
   <head>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -12,12 +12,44 @@
 
 
       <%= simple_form_for @user do |f| %>
-        <%= f.input :name, label: 'Username: ', error: 'Username is mandatory!' %>
-        <%= f.input :email, label: 'Email address: ', error: 'Email address is madnatory!'  %>
-        <%= f.input :password %>
-        <%= f.input :password_confirmation, label: 'Re-enter password: ' %>
+        <%= f.input :name, label: false, placeholder: 'Username' %>
+        <%= f.input :email, label: false, placeholder: 'Email address', hint: "user@example.com", error: false  %>
+        <%= f.input :password, label: false, placeholder: 'Password', hint: "At least 6 characters long", error: false %>
+        <%= f.input :password_confirmation, label: false, placeholder: 'Re-enter password', error: false %>
         <%= f.button :submit %>
+
+
+
       <% end %>
+
+      <% if @user.errors.any? %>
+        <div id="error_msg">
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+        </div>
+      <% end %>
+
+
+      <script>
+        $("#user_email").focus(function() {
+         $("#new_user > div.input.email.required.user_email.field_with_hint > span").css("visibility", "visible")
+        });
+
+        $("#user_email").focusout(function() {
+         $("#new_user > div.input.email.required.user_email.field_with_hint > span").css("visibility", "hidden")
+        });
+
+        $("#user_password").focus(function() {
+         $("#new_user > div.input.password.required.user_password.field_with_hint > span").css("visibility", "visible")
+        });
+
+        $("#user_password").focusout(function() {
+         $("#new_user > div.input.password.required.user_password.field_with_hint > span").css("visibility", "hidden")
+        });
+      </script>
 
   </body>
 

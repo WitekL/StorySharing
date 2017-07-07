@@ -6,16 +6,27 @@
   <body>
     <div class="topnav">
       <ul id="site-nav">
-        <li>Main</li>
+        <li><%= link_to "Main", home_index_url %></li>
         <li>Articles</li>
         <li>Gallery</li>
       </ul>
 
       <ul id="account-nav">
-        <li><%= link_to "Sign up", new_user_path %></li>
+      <% if logged_in? %>
+        <li>Test</li>
+      <% else %>
+        <li><%= link_to "Sign in", sessions_new_url %></li>
+      <% end %>
       </ul>
     </div>
+
+
       <h1>Create new account</h1>
+
+
+
+
+
 
 
       <%= simple_form_for @user do |f| %>

@@ -6,7 +6,7 @@
   <body>
     <div class="topnav">
       <ul id="site-nav">
-        <li>Main</li>
+        <li><%= link_to "Main", home_index_url %></li>
         <li>Articles</li>
         <li>Gallery</li>
       </ul>
@@ -22,10 +22,13 @@
       <h1>Sign in</h1>
 
 
-<%= flash[:danger] unless flash[:danger].blank? %>
+  <div id="error"> <%= flash[:danger] unless flash[:danger].blank? %> </div>
 
-<%= simple_form_for :session, url: sessions_login_url do |f| %>
-  <%= f.input :email, label: false, placeholder: "E-mail address" %>
-  <%= f.input :password, label: false, placeholder: "Password" %>
-  <%= f.submit "Sign In" %>
-<% end %>
+  <%= simple_form_for :session, url: sessions_login_url do |f| %>
+    <%= f.input :email, label: false, placeholder: "E-mail address" %>
+    <%= f.input :password, label: false, placeholder: "Password" %>
+    <%= f.submit "Sign In" %>
+  <% end %>
+
+  </body>
+</head>

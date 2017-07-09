@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <ul id="site-nav">
+        <li><%= link_to "Main", home_index_url %></li>
+        <li>Articles</li>
+        <li>Gallery</li>
+      </ul>
+
+      <ul id="account-nav">
+      <% if logged_in? %>
+        <li><div id="dropButton">Profile
+
+          </div>
+
+
+        </li>
+      <% else %>
+        <li><%= link_to "Sign in", sessions_new_url %></li>
+      <% end %>
+      </ul>
+    </div>
+
+    <div id="dropArea">
+      <ul>
+        <li>test</li>
+        <li><%= link_to "Sign out", sessions_logout_url, method: :delete %></li>
+      </ul>
+      </div>
+
+      <%= simple_form_for @article do |f| %>
+      <%= f.input :title, label: false, placeholder: 'Title' %>
+      <%= f.input :content, label: false, placeholder: 'Text' %>
+      <%= f.button :submit %>
+      <% end %>
+
+    </div>
+
+    <script>
+    $("#dropButton").click(function() {
+        $("#dropArea").toggle()
+      });
+    </script>
+
+    </body>
+</html>

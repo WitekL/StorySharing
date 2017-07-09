@@ -57,6 +57,10 @@ body > form {
   text-align: center;
 }
 
+#dropButton {
+  cursor: pointer;
+}
+
 #dropArea {
   display: none;
   overflow: auto;
@@ -67,7 +71,7 @@ body > form {
   font-size: 17px;
   margin-bottom: 15px;
   border: 1px solid black;
-  width: 50px;
+  width: 60px;
 }
 
 #dropArea ul {

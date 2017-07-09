@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @all_articles = Article.all
+    #TODO artykuły w kolejności od najnowszego
   end
 
   def new

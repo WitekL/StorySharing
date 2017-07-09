@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .topnav {
-  background-color: black;
+  background-color: #223240;
     overflow: hidden;
 }
-
+// 5AB1BF
 .topnav li {
     float: left;
     display: block;
@@ -30,9 +30,19 @@
   margin-right: 5px;
 }
 
+.topnav a {
+  text-decoration: none;
+}
+
+.topnav a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 .topnav li:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #69ECFF;
+    color: white;
+    border-radius: 10px;
 }
 
 .topnav li.active {
@@ -60,8 +70,8 @@ input{
 }
 
 input[type=submit] {
-  border: none;
-  background-color: black;
+  border-radius: 25px;
+  background-color: #223240;
   color: white;
 }
 

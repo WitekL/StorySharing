@@ -2,11 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.tile {
-  background-color: red;
+#new_article_button {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  background-color: #FF9A81;
+  margin-top: 20px;
+  margin-left: 860px;
+  margin-right: 860px;
+}
+
+#new_article_button a {
+  color: black;
+  text-decoration: none;
+}
+
+#article_container {
   margin-left: 500px;
   margin-right: 500px;
+}
+
+#article_container a {
+  color: black;
+  text-decoration: none;
+}
+
+.tile {
+  background-color: #89C6FF;
   border-radius: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.tile:hover {
+  transform: scale(1.01);
 }
 
 .tile h2 {
@@ -23,4 +53,22 @@
 .tile p {
   margin-left: 15px;
   padding-bottom: 5px;
+}
+
+#article_form {
+  margin-top: 52px;
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+#article_content {
+  width: 1400px;
+  height: 700px;
+}
+
+#article_viewed {
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
 }

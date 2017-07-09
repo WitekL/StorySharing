@@ -30,23 +30,18 @@
         <li>test</li>
         <li><%= link_to "Sign out", sessions_logout_url, method: :delete %></li>
       </ul>
-      </div>
-
-    <div id="article_form">
-      <%= simple_form_for @article do |f| %>
-      <%= f.input :title, label: false, placeholder: 'Title' %>
-      <%= f.input :content, label: false, placeholder: 'Text', as: :ckeditor %>
-      <%= f.button :submit %>
-      <% end %>
     </div>
+
+
+    <h2><%= @article.title %></h2>
+    <h5><%= User.find_by(id: @article.user_id).name %> </h5>
+    <div id="article_viewed"><%= raw @article.content %></div>
 
     <script>
     $("#dropButton").click(function() {
         $("#dropArea").toggle()
       });
     </script>
-
-    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
 
     </body>
 </html>

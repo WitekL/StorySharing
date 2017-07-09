@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-
+gem "ckeditor", :git => "https://github.com/galetahub/ckeditor.git"
 #encryption algorithm
 gem 'bcrypt', '3.1.11'
 #Simple form

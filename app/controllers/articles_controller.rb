@@ -12,10 +12,14 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      redirect_to articles_url
+      redirect_to @article
     else
 
     end
+  end
+
+  def show
+    @article = Article.find_by(id: params[:id])
   end
 
   def article_params

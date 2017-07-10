@@ -4,21 +4,7 @@
   </head>
 
   <body>
-    <div class="topnav">
-      <ul id="site-nav">
-        <li><%= link_to "Main", home_index_url %></li>
-        <li><%= link_to "Articles", articles_url %></li>
-        <li>Gallery</li>
-      </ul>
-
-      <ul id="account-nav">
-      <% if logged_in? %>
-        <li>Test</li>
-      <% else %>
-        <li><%= link_to "Sign in", sessions_new_url %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/navigation' %>
 
 
       <h1>Create new account</h1>

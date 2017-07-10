@@ -17,7 +17,9 @@ gem 'simple_form'
 gem 'rails', '~> 5.1.1'
 # Moved sqlite from here for development/production
 
-
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

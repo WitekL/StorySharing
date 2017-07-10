@@ -13,4 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require ckeditor/init
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
 //= require_tree .

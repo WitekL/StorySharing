@@ -6,14 +6,25 @@
   <body>
     <%= render 'shared/navigation' %>
 
-    <div id="dropArea">
-      <ul>
-        <li>test</li>
-        <li><%= link_to "Sign out", sessions_logout_url, method: :delete %></li>
-      </ul>
-      </div>
 
-<div id="new_article_button"> <%=link_to "Write a new article", new_article_url %> </div>
+
+
+    <div class="container">
+          <!-- Example row of columns -->
+          <div class="row">
+            <% @all_articles.each do |article| %>
+            <div class="col-md-4 article-card">
+              <h2><%= article.title %></h2>
+              <p><%= raw article.content[0..200] %></p>
+              <p> <%= link_to "Read", article, :class => "btn btn-default" %>
+            </div>
+
+            <% end %>
+
+          </div>
+
+
+<!-- <div id="new_article_button"> <%=link_to "Write a new article", new_article_url %> </div>
     <div id="article_container">
       <% @all_articles.each do |article| %>
         <%= link_to article do %>
@@ -31,7 +42,7 @@
     $("#dropButton").click(function() {
         $("#dropArea").toggle()
       });
-    </script>
+    </script> -->
 
     </body>
 </html>

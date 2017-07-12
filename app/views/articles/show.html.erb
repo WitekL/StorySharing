@@ -6,14 +6,6 @@
   <body>
     <%= render 'shared/navigation' %>
 
-    <div id="dropArea">
-      <ul>
-        <li>test</li>
-        <li><%= link_to "Sign out", sessions_logout_url, method: :delete %></li>
-      </ul>
-    </div>
-
-
     <h2><%= @article.title %></h2>
     <h5><%= User.find_by(id: @article.user_id).name %> </h5>
     <div id="article_viewed"><%= raw @article.content %></div>

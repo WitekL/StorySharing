@@ -5,55 +5,39 @@
 
   <body>
     <%= render 'shared/navigation' %>
-
-
-      <h1>Create new account</h1>
-
-
-
-
-
-
-
-      <%= simple_form_for @user do |f| %>
-        <%= f.input :name, label: false, placeholder: 'Username' %>
-        <%= f.input :email, label: false, placeholder: 'Email address', hint: "user@example.com", error: false  %>
-        <%= f.input :password, label: false, placeholder: 'Password', hint: "At least 6 characters long", error: false %>
-        <%= f.input :password_confirmation, label: false, placeholder: 'Re-enter password', error: false %>
-        <%= f.button :submit %>
-
-
-
-      <% end %>
-
-      <% if @user.errors.any? %>
-        <div id="error_msg">
-            <ul>
-              <% @user.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
+      <div class="container">
+        <div class="row">
+          <div class="panel-heading">
+  	               <div class="panel-title text-center">
+  	               		<h1 class="title">Sign up!</h1>
+  	               		<hr />
+  	               	</div>
+  	            </div>
         </div>
-      <% end %>
+        <div class="row">
+          <div class="col-xs-3"></div>
+          <div class="col-xs-6">
+            <%= simple_form_for @user do |f| %>
+              <%= f.input :name, label: false, placeholder: 'Username', input_html: { class: "form-control" } %>
+              <%= f.input :email, label: false, placeholder: 'Email address', error: false, input_html: { class: "form-control", "data-tooltip" => true, title: "user@example.com" }  %>
+              <%= f.input :password, label: false, placeholder: 'Password', error: false, input_html: { class: "form-control", "data-tooltip" => true, title: "At least 6 characters long" } %>
+              <%= f.input :password_confirmation, label: false, placeholder: 'Re-enter password', error: false, input_html: { class: "form-control" } %>
+              <%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+            <% end %>
 
-
-      <script>
-        $("#user_email").focus(function() {
-         $("#new_user > div.input.email.required.user_email.field_with_hint > span").css("visibility", "visible")
-        });
-
-        $("#user_email").focusout(function() {
-         $("#new_user > div.input.email.required.user_email.field_with_hint > span").css("visibility", "hidden")
-        });
-
-        $("#user_password").focus(function() {
-         $("#new_user > div.input.password.required.user_password.field_with_hint > span").css("visibility", "visible")
-        });
-
-        $("#user_password").focusout(function() {
-         $("#new_user > div.input.password.required.user_password.field_with_hint > span").css("visibility", "hidden")
-        });
-      </script>
+            <% if @user.errors.any? %>
+              <div id="error_msg">
+                  <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-xs-3"></div>
+        </div>
+      </div>
 
   </body>
 

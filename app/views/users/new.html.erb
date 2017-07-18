@@ -17,16 +17,9 @@
         <div class="row">
           <div class="col-xs-3"></div>
           <div class="col-xs-6">
-            <%= simple_form_for @user do |f| %>
-              <%= f.input :name, label: false, placeholder: 'Username', input_html: { class: "form-control" } %>
-              <%= f.input :email, label: false, placeholder: 'Email address', error: false, input_html: { class: "form-control", "data-tooltip" => true, title: "user@example.com" }  %>
-              <%= f.input :password, label: false, placeholder: 'Password', error: false, input_html: { class: "form-control", "data-tooltip" => true, title: "At least 6 characters long" } %>
-              <%= f.input :password_confirmation, label: false, placeholder: 'Re-enter password', error: false, input_html: { class: "form-control" } %>
-              <%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
-            <% end %>
 
             <% if @user.errors.any? %>
-              <div id="error_msg">
+              <div class="alert alert-danger" role="alert" id="error_msg">
                   <ul>
                     <% @user.errors.full_messages.each do |msg| %>
                       <li><%= msg %></li>
@@ -34,6 +27,28 @@
                   </ul>
               </div>
             <% end %>
+
+            <%= simple_form_for @user do |f| %>
+            <div class="form-group">
+              <label for="exampleInputName">Username</label>
+              <%= f.input :name, label: false, input_html: { class: "form-control" } %>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail">Email address</label>
+              <%= f.input :email, label: false, error: false, input_html: { class: "form-control", "data-tooltip" => true, title: "user@example.com" }  %>
+            </div>
+            <div class="form-group">
+          		<label for="exampleInputPassword1">Password</label>
+              <%= f.input :password, label: false, error: false, input_html: { class: "form-control", "data-tooltip" => true, title: "At least 6 characters long" } %>
+            </div>
+            <div class="form-group">
+          		<label for="exampleInputPassword1">Re-enter password</label>
+              <%= f.input :password_confirmation, label: false, error: false, input_html: { class: "form-control" } %>
+            </div>
+              <%= f.button :submit, class: "btn btn-primary btn-block" %>
+            <% end %>
+
+
           </div>
           <div class="col-xs-3"></div>
         </div>

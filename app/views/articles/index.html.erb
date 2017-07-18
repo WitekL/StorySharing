@@ -25,6 +25,7 @@
             <p><%= raw article.content[0..200] %></p>
             <p>
               <%= link_to "Read", article, :class => "btn btn-default" %>
+              <%= link_to "Destroy", article, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
             </p>
           </div>
         <% end %>

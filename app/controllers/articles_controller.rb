@@ -19,6 +19,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find_by(id: params[:id])
+    @article.destroy
+  end
+
   def show
     @article = Article.find_by(id: params[:id])
   end

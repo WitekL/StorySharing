@@ -6,15 +6,16 @@
   <body>
     <%= render 'shared/navigation' %>
 
-    <h2><%= @article.title %></h2>
-    <h5><%= User.find_by(id: @article.user_id).name %> </h5>
-    <div id="article_viewed"><%= raw @article.content %></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
 
-    <script>
-    $("#dropButton").click(function() {
-        $("#dropArea").toggle()
-      });
-    </script>
+          <h2 class="text-center"><%= @article.title %></h2>
+          <h5 class="text-center">by <%= User.find_by(id: @article.user_id).name %> </h5>
+          <div id="article_viewed"><%= raw @article.content %></div>
 
-    </body>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

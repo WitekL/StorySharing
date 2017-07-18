@@ -7,43 +7,31 @@
   <body>
     <%= render 'shared/navigation' %>
 
-
-
-
     <div class="container">
-          <!-- Example row of columns -->
-          <div class="row">
-            <% @all_articles.each do |article| %>
-            <div class="col-md-4 article-card">
-              <h2><%= article.title %></h2>
-              <p><%= raw article.content[0..200] %></p>
-              <p> <%= link_to "Read", article, :class => "btn btn-default" %>
-            </div>
-
-            <% end %>
-
-          </div>
-
-
-<!-- <div id="new_article_button"> <%=link_to "Write a new article", new_article_url %> </div>
-    <div id="article_container">
-      <% @all_articles.each do |article| %>
-        <%= link_to article do %>
-          <div class="tile">
-            <h2> <%= article.title %> </h3>
-            <h5> Written by: <%= User.find_by(id: article.user_id).name %> </h5>
-            <p> <%= raw article.content[0..200] %>... </p>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4"> </div>
+        <div class="col-md-4 text-center">
+          <p>
+            <%= link_to "Create new article", new_article_url, :class => "btn btn-primary" %>
+          </p>
+        </div>
+        <div class="col-md-4"> </div>
+      </div>
+      <div class="row">
+        <% @all_articles.each do |article| %>
+          <div class="col-md-4 article-card">
+            <h2><%= article.title %></h2>
+            <p><%= raw article.content[0..200] %></p>
+            <p>
+              <%= link_to "Read", article, :class => "btn btn-default" %>
+            </p>
           </div>
         <% end %>
-      <% end %>
+       </div>
+     </div>
 
-    </div>
 
-    <script>
-    $("#dropButton").click(function() {
-        $("#dropArea").toggle()
-      });
-    </script> -->
 
-    </body>
-</html>
+      </body>
+    </html>

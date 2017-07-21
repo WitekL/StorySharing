@@ -35,10 +35,14 @@ class ArticlesController < ApplicationController
   end
 
   def post_owner
-    @article = current_user.articles.find_by(id: params[:id])
-    if @article.nil?
-      flash[:danger] = "You are not allowed to do that"
-      redirect_to articles_url
+    if current_user.nil?
+      logged_in_user()
+    else
+      @article = current_user.articles.find_by(id: params[:id])
+      if @article.nil?
+        flash[:danger] = "You are not allowed to do that"
+        redirect_to articles_url
+      end
     end
   end
 end

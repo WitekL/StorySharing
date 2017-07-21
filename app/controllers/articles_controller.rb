@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
+  before_action :post_owner, only: :destroy
 
   def index
     @all_articles = Article.all
@@ -22,6 +23,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find_by(id: params[:id])
     @article.destroy
+    redirect_to articles_url
   end
 
   def show
@@ -30,5 +32,13 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :content)
+  end
+
+  def post_owner
+    @article = current_user.articles.find_by(id: params[:id])
+    if @article.nil?
+      flash[:danger] = "You are not allowed to do that"
+      redirect_to articles_url
+    end
   end
 end

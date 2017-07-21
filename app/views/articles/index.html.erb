@@ -12,6 +12,11 @@
       <div class="row">
         <div class="col-md-4"> </div>
         <div class="col-md-4 text-center">
+          <% if flash[:danger].present? %>
+          <div class="alert alert-danger" role="alert" id="error">
+             <%= flash[:danger] %>
+          </div>
+          <% end %>
           <p>
             <%= link_to "Create new article", new_article_url, :class => "btn btn-primary" %>
           </p>
@@ -25,7 +30,7 @@
             <p><%= raw article.content[0..200] %></p>
             <p>
               <%= link_to "Read", article, :class => "btn btn-default" %>
-              <%= link_to "Destroy", article, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
+              <%= link_to "Delete", article, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" %>
             </p>
           </div>
         <% end %>
